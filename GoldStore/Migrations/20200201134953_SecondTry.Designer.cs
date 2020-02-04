@@ -4,14 +4,16 @@ using GoldStore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GoldStore.Migrations
 {
     [DbContext(typeof(GoldStoreDbContext))]
-    partial class GoldStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200201134953_SecondTry")]
+    partial class SecondTry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

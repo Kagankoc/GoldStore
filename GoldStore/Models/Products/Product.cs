@@ -12,9 +12,9 @@ namespace GoldStore.Models.Products
         public string MetaKeywords { get; set; }
         public string SKU { get; set; }
         public string Model { get; set; }
-        public decimal Price { get; set; }
-        public decimal SalePrice { get; set; }
-        public decimal OldPrice { get; set; }
+        public double Price { get; set; }
+        public double SalePrice { get; set; }
+        public double OldPrice { get; set; }
         public string ImageURL { get; set; }
         public int QuantityInStock { get; set; }
         public bool IsBestSeller { get; set; }
@@ -24,7 +24,6 @@ namespace GoldStore.Models.Products
         public Guid BrandId { get; set; }
         public Brand Brand { get; set; }
         public ProductStatus ProductStatus { get; set; }
-
 
     }
 }

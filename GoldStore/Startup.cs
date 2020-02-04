@@ -1,5 +1,10 @@
+using GoldStore.Repository.Classes;
+using GoldStore.Repository.Interfaces;
+using GoldStore.Services.Classes;
+using GoldStore.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,9 +24,18 @@ namespace GoldStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDbContext<GoldStoreDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("GoldStore")));
+
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IBrandRepository, BrandRepository>();
+
+            services.AddTransient<ICatalogService, CatalogService>();
+
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,12 +45,7 @@ namespace GoldStore
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -47,8 +56,35 @@ namespace GoldStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: null,
+                    pattern: "catalog/{categorySlug}/{brandSlug}/page{page:int}",
+                    defaults: new { controller = "Catalog", action = "Index" }
+                );
+
+                endpoints.MapControllerRoute(
+                    name: null,
+                    pattern: "page{page:int}",
+                    defaults: new
+                    {
+                        controller = "Catalog",
+                        action = "Index",
+                        productPage = 1
+                    }
+                );
+                endpoints.MapControllerRoute(
+                    name: null,
+                    pattern: "catalog/{categorySlug}/{brandSlug}",
+                    defaults: new
+                    {
+                        controller = "Catalog",
+                        action = "Index",
+                        productPage = 1
+                    }
+                );
+
+                endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Catalog}/{action=Index}/{id?}");
             });
         }
     }
