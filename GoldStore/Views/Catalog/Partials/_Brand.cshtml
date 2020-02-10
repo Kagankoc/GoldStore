@@ -8,7 +8,7 @@
     <div class="brand__list-wrapper">
         @if (brand.Slug == (string)ViewData["SelectedBrand"])
         {
-            <a href="/catalog/@ViewData["SelectedCategory"]/@brand.Slug" class="brand__selected">@brand.MetaKeywords</a>
+            <a href="/catalog/@ViewData["SelectedCategory"]/@brand.Slug" class="brand__selected">@brand.Name</a>
         }
         else
         {

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using GoldStore.Models.Products;
+﻿using GoldStore.Models.Products;
 using GoldStore.Repository.Interfaces;
+using System;
+using System.Collections.Generic;
 
 namespace GoldStore.Repository.Classes
 {

@@ -1,0 +1,30 @@
+﻿@{
+    var cartTotal = Convert.ToDouble((ViewData["CartTotal"]));
+    var cartItemsCount = Convert.ToInt32(ViewData["CartItemsCount"]);
+    var cartItems = ViewData["CartItems"] as IEnumerable<CartItem>;
+
+}
+
+<div>
+    @if (cartItems != null && cartItems.Any())
+    {
+        <small class="cart_summary_widget__wrapper">
+            <b>My Cart:</b>
+
+            @if (cartItemsCount > 1)
+            {
+                <span class="cart_summary_widget__item-count">@cartItemsCount items </span>
+            }
+            else
+            {
+                <span class="cart_summary_widget__item-count">@cartItemsCount item </span>
+            }
+
+
+            <span class="cart_summary_widget__cart-total">$@cartTotal</span>
+        </small>
+    }
+    <a asp-controller="Cart" asp-action="CartDetail">
+        <i class="fas fa-shopping-cart cart_summary_widget__cart-icon" style="font-weight:900"></i>
+    </a>
+</div>

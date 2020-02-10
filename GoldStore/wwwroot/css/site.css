@@ -46,18 +46,21 @@ input[type="checkbox"].input-validation-error {
 /*Pagination Color*/
 .custom-pagination .pagination > li > a,
 .custom-pagination .pagination > li > span {
-    border: 1px solid purple;
-    color: purple;
+    border: 2px ridge goldenrod;
+    float: left;
+    text-align: center;
+    width: 20px;
+    color: orange;
 }
 
 .pagination > li.active > span {
-    background-color: purple;
-    color: #fff;
+    background-color:bisque;
+    color: orange;
 }
 
 .pagination > li.active > span:hover {
-    background-color: #a64ca6;
-    border: 1px solid #a64ca6;
+    background-color:dimgray;
+    border: 1px solid goldenrod;
     color: white;
 }
 

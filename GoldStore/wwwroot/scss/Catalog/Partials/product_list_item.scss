@@ -2,7 +2,7 @@
     height: 370px;
     text-align: center;
     padding: 10px 5px 10px 5px;
-    border: 1px solid purple;
+    border: 2px solid goldenrod;
     margin-bottom: 15px;
 
     &__image-wrapper {
@@ -17,17 +17,17 @@
     &__product-name {
         font-size: 14px;
         font-weight: 500;
-        color: purple;
+        color: goldenrod;
     }
 
     &__product-price {
         font-size: 18px;
         font-weight: 500;
-        color: purple;
+        color: goldenrod;
     }
 
     &__button {
-        background-color: purple;
+        background-color: goldenrod;
         color: white;
         padding: 8px 10px;
         border: none;

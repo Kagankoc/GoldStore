@@ -28,12 +28,24 @@ namespace GoldStore
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDbContext<GoldStoreDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("GoldStore")));
+            services.AddMemoryCache();
+            services.AddSession();
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+
+            });
 
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IBrandRepository, BrandRepository>();
+            services.AddTransient<ICartItemRepository, CartItemRepository>();
+            services.AddTransient<ICartRepository, CartRepository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
 
             services.AddTransient<ICatalogService, CatalogService>();
+            services.AddTransient<ICartService, CartService>();
 
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
         }
@@ -48,7 +60,8 @@ namespace GoldStore
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
+            app.UseCookiePolicy();
             app.UseRouting();
 
             app.UseAuthorization();

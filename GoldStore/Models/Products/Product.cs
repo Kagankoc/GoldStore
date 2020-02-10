@@ -15,7 +15,7 @@ namespace GoldStore.Models.Products
         public double Price { get; set; }
         public double SalePrice { get; set; }
         public double OldPrice { get; set; }
-        public string ImageURL { get; set; }
+        public string ImageUrl { get; set; }
         public int QuantityInStock { get; set; }
         public bool IsBestSeller { get; set; }
         public bool IsFeatured { get; set; }
