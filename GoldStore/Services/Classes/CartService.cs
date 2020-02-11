@@ -1,4 +1,4 @@
-﻿using GoldStore.Models.Cart;
+﻿using GoldStore.Models.Carts;
 using GoldStore.Repository.Interfaces;
 using GoldStore.Services.Interfaces;
 using GoldStore.ViewModels.Cart;

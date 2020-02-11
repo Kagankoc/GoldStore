@@ -1,3 +1,4 @@
+using GoldStore.Database;
 using GoldStore.Repository.Classes;
 using GoldStore.Repository.Interfaces;
 using GoldStore.Services.Classes;
@@ -43,6 +44,10 @@ namespace GoldStore
             services.AddTransient<ICartItemRepository, CartItemRepository>();
             services.AddTransient<ICartRepository, CartRepository>();
             services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<IPersonRepository, PersonRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IOrderItemRepository, OrderItemRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<ICartService, CartService>();

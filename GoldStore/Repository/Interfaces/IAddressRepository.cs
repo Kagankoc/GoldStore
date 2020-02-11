@@ -1,4 +1,4 @@
-﻿using GoldStore.Models.Address;
+﻿using GoldStore.Models.Addresses;
 using System;
 using System.Collections.Generic;
 

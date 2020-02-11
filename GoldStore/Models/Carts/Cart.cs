@@ -1,7 +1,7 @@
 ﻿using GoldStore.Models.Shared;
 using System.Collections.Generic;
 
-namespace GoldStore.Models.Cart
+namespace GoldStore.Models.Carts
 {
     public class Cart : BaseObject
     {

@@ -1,10 +1,12 @@
-﻿using GoldStore.Models.Address;
-using GoldStore.Models.Cart;
+﻿using GoldStore.Models.Addresses;
+using GoldStore.Models.Carts;
+using GoldStore.Models.Customers;
+using GoldStore.Models.Orders;
 using GoldStore.Models.Products;
+using GoldStore.Models.Shared;
 using Microsoft.EntityFrameworkCore;
 
-
-namespace GoldStore
+namespace GoldStore.Database
 {
     public class GoldStoreDbContext : DbContext
     {
@@ -20,6 +22,10 @@ namespace GoldStore
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Person> People { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
     }
 }

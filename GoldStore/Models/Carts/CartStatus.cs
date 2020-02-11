@@ -1,4 +1,4 @@
-﻿namespace GoldStore.Models.Cart
+﻿namespace GoldStore.Models.Carts
 {
     public enum CartStatus
     {

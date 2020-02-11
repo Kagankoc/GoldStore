@@ -234,4 +234,73 @@
   font-size: 25px;
   margin-top: -10px; }
 
+.checkout {
+  padding: 80px 120px 120px 120px; }
+  .checkout .checkout-editor__panel {
+    border-radius: 0px; }
+  .checkout__header {
+    padding: 25px 15px 25px 15px; }
+  .checkout__panel-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: purple;
+    text-align: center; }
+  .checkout__panel-body {
+    padding: 40px 50px 20px 50px; }
+  .checkout__input-label {
+    font-weight: 500;
+    font-size: 16px;
+    color: purple; }
+  .checkout__subject-input {
+    border-radius: 0px;
+    height: 40px; }
+  .checkout__detail-input {
+    border-radius: 0px; }
+  .checkout__flex-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 10px 12px 10px; }
+  .checkout__button {
+    border-radius: 0px;
+    padding: 5px 25px 5px 25px;
+    background-color: purple;
+    color: white;
+    font-size: 14px;
+    font-weight: 400; }
+  .checkout__button:hover {
+    border-radius: 0px;
+    padding: 5px 25px 5px 25px;
+    background-color: purple;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: azure; }
+
+.receipt {
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 50px;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 600; }
+  .receipt__button-wrapper {
+    margin-top: 45px; }
+  .receipt__button {
+    color: purple;
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600; }
+    .receipt__button:hover {
+      color: purple;
+      padding: 12px;
+      border: 1px solid purple;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      background-color: #fff0ff; }
+
 /*# sourceMappingURL=goldstore.css.map */

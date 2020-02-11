@@ -1,4 +1,5 @@
-﻿using GoldStore.Models.Cart;
+﻿using GoldStore.Database;
+using GoldStore.Models.Carts;
 using GoldStore.Repository.Interfaces;
 using System;
 using System.Collections.Generic;

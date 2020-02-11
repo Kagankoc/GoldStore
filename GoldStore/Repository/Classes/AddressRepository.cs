@@ -1,4 +1,5 @@
-﻿using GoldStore.Models.Address;
+﻿using GoldStore.Database;
+using GoldStore.Models.Addresses;
 using GoldStore.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
