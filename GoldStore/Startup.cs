@@ -48,6 +48,7 @@ namespace GoldStore
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IOrderItemRepository, OrderItemRepository>();
             services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<ICheckoutService, CheckoutService>();
 
             services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<ICartService, CartService>();
